@@ -5,7 +5,6 @@ class LinkedListNode
     @value = value
     @next_node = next_node
   end
- 
 end
 
 def print_values(list_node)
@@ -17,18 +16,6 @@ def print_values(list_node)
     return
   end 
 end
-
-# node1 = LinkedListNode.new(37)
-# node2 = LinkedListNode.new(99, node1)
-# node3 = LinkedListNode.new(12, node2)
-
-# print_values(node3)
-
-# 12 --> 99 --> 37 --> nil
-
-# [37, nil]
-# [99, [37, nil]]
-# [12, [99, [37, nil]]]
 
 class Stack
     attr_accessor :data
@@ -50,17 +37,27 @@ class Stack
     # Remove the last item that was pushed onto the
     # stack and return the value to the user
     def pop
-        # I RETURN A VALUE
+        value = self.data.value
+        self.data = self.data.next_node
+        value
     end
-
 end
 
+# TEST 
 stack = Stack.new
 stack.push(1)
 stack.push(5)
 stack.push(10)
-
+stack.push(-1)
+stack.push(77)
+puts("### Print Stack ###")
 print_values(stack.data)
+puts
 
+puts("### Print items off the stack ###")
+puts stack.pop
+puts stack.pop
+puts
 
-
+puts("### Print Stack Result  ###")
+print_values(stack.data)
