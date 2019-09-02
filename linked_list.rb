@@ -7,16 +7,6 @@ class LinkedListNode
   end
 end
 
-def print_values(list_node)
-  if list_node
-    print "#{list_node.value} --> "
-    print_values(list_node.next_node)
-  else
-    print "nil\n"
-    return
-  end 
-end
-
 class Stack
     attr_accessor :data
 
@@ -43,21 +33,21 @@ class Stack
     end
 end
 
-# TEST 
-stack = Stack.new
-stack.push(1)
-stack.push(5)
-stack.push(10)
-stack.push(-1)
-stack.push(77)
-puts("### Print Stack ###")
-print_values(stack.data)
-puts
+def print_values(list_node)
+  if list_node
+    print "#{list_node.value} --> "
+    print_values(list_node.next_node)
+  else
+    print "nil\n"
+    return
+  end 
+end
 
-puts("### Print items off the stack ###")
-puts stack.pop
-puts stack.pop
-puts
-
-puts("### Print Stack Result  ###")
-print_values(stack.data)
+def reverse_list(list)
+  stack = Stack.new
+  while list
+    stack.push(list.value)
+    list = list.next_node
+  end
+  stack
+end
