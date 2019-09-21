@@ -31,23 +31,24 @@ class Stack
         self.data = self.data.next_node
         value
     end
-end
+    
+    #This method revers the list
+    def reverse_list(list)
+      stack = Stack.new
+      while list
+        stack.push(list.value)
+        list = list.next_node
+      end
+      stack
+    end
 
-def print_values(list_node)
-  if list_node
-    print "#{list_node.value} --> "
-    print_values(list_node.next_node)
-  else
-    print "nil\n"
-    return
-  end 
-end
-
-def reverse_list(list)
-  stack = Stack.new
-  while list
-    stack.push(list.value)
-    list = list.next_node
-  end
-  stack
+    def stack_to_array(list_node, array)
+      if list_node
+        array << "#{list_node.value} --> "
+        stack_to_array(list_node.next_node, array)
+      else
+       array << "nil"
+      end
+      return array
+    end
 end
