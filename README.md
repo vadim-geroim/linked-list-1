@@ -6,7 +6,7 @@ Solution and Tests to the Columbia University Linked List #1 problem.
 - `spec/linked_list_spec.rb` - includes tests for pop, push and reverse_list methods
 
 ## Solution
-- The class `Stack` contains implemented methods such as `pop`, `reverse_list`
+- The `Stack` class contains implemented methods such as `pop`, `reverse_list`
 - The `pop` method takes the last added element in the stack and returns stack without it
 - The `reverse_list` method takes stack as a parameter, creates a new stack and iterates
 through the stack accepted as a parameter. Each element will be added in a new stack and returned
